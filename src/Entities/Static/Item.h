@@ -15,6 +15,7 @@ class Item : public StaticEntity {
         Item(int x, int y, shared_ptr<Handler> handler, ofImage sprite) : StaticEntity(x, y, handler) {
             this->currentSprite = sprite;
             isCollected = false;
+            
         }
         ~Item(){};
         void onCollision(shared_ptr<DynamicEntity> e);
