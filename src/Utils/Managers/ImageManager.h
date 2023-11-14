@@ -52,6 +52,7 @@ public:
     // TODO: Add your image declarations here
     ofImage gameOverScreen;
     ofImage gameOverScreenWithOptions;
+    ofImage SwordItem;
     ofImage basicSword;
     ofImage overWorldPixelMap;
     ofImage oldMansCavePixelMap;
