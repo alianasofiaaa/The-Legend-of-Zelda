@@ -60,10 +60,10 @@ void GameState::draw() {
 
     // Draw Sword on the HUD
     handler->getImageManager()->basicSword.draw(ofGetWidth()/2 - (ofGetWidth() % 10), hudHeight - 90, 40, 40);
-
+if(currentMap==oldManCaveMap){
         handler->getImageManager()->SwordItem.draw(400, 400);
 
-
+}
     // MiniMap
     ofDrawRectangle(this->currentMap->getPlayer()->getX()/20 + 40 * (currentMap->getCurrentSectionX()+1),  
                     hudHeight + (this->currentMap->getPlayer()->getY()/15  + 50 * (currentMap->getCurrentSectionY()+1)) - 175, 5, 5);
