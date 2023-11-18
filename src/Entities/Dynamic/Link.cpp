@@ -194,8 +194,8 @@ void Link::keyPressed(int key) {
 
         else if (key == 'd')
             this->movingDir[RIGHT] = true;
-
-        else if (key == ' ' || key == 'b') {
+else if(isPickingUp){
+         if (key == ' ' || key == 'b') {
             if (attacking || dead)
                 return;
             this->attacking = true;
@@ -211,6 +211,7 @@ void Link::keyPressed(int key) {
             // Play the sword sound
             handler->getSoundEffectManager()->playSoundEffect("link_sword_attack");
         }
+    }
     }
 }
 
