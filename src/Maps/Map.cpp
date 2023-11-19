@@ -211,8 +211,13 @@ void Map::checkCollision(){
             }
             // Check if an enemy is colliding with this same block
             for (auto enemy : currentSection->getEnemies()){
-                if (block->collidesWith(enemy))
+                if (block->collidesWith(enemy)){
                     block->onCollision(enemy);
+                }
+                if(link->collidesWith(enemy)){
+                    link->damage(1);
+                    link->onCollision(enemy);
+                }
             }
         }
     }
