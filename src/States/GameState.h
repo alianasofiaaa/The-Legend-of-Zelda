@@ -5,6 +5,7 @@
 #include "Tektike.h"
 #include "MapBuilder.h"
 #include "State.h"
+#include "SwordItem.h"
 #include <memory>
 
 class GameState : public State {
@@ -13,6 +14,8 @@ private:
     shared_ptr<Map> currentMap;
     shared_ptr<Map> overWorldMap;
     shared_ptr<Map> oldManCaveMap;
+    shared_ptr<SwordItem> Sword;
+    shared_ptr<Link> link;
     unique_ptr<MapBuilder> mapBuilder;
    
 public:
@@ -28,6 +31,10 @@ public:
     int hudH;
     int hudHeight;
     int changeState;
-
+    int SwordImageX=400;
+    int SwordImageY=400;
+    bool swordhere=true;
+   
     shared_ptr<Tektike> createTektike();
+    shared_ptr<SwordItem> createSword();
 };

@@ -1,4 +1,9 @@
 #include "SwordItem.h"
+
+
+void SwordItem::applyEffect(shared_ptr<Link> link){
+
+}
 void SwordItem::onCollision(shared_ptr<DynamicEntity> e) {
     shared_ptr<Link> link = dynamic_pointer_cast<Link>(e);
     if (link){
