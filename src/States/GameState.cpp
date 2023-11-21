@@ -58,10 +58,11 @@ void GameState::draw() {
     // Draw hearts on the HUD
     this->currentMap->getPlayer()->drawHearts(hudHeight-10);
 
-// Draw Sword in HUD
+// Draws Sword in HUD once Collided
         if (this->currentMap->getPlayer()->canAttack==true) {
-            handler->getImageManager()->SwordItem.draw(ofGetWidth() / 2 - (ofGetWidth() % 10), hudHeight - 90, 40, 40);
+            handler->getImageManager()->SwordItem.draw(ofGetWidth() / 2 - (ofGetWidth() % 10), hudHeight - 90, 40, 40);          
         }
+        //Draws Sword on Cave until Collided
            if(this->currentMap->getPlayer()->canAttack==false){
      oldManCaveMap->getSection(0,0)->addItemToTile(8,5,createSword());
     }
@@ -81,8 +82,6 @@ void GameState::reset() {
     oldManCaveMap = mapBuilder->createMap(handler->getImageManager()->oldMansCavePixelMap);
     //If there's more than one section in a map, besides overWorld, we must set which section we want to start at
     oldManCaveMap->setCurrentSection(0,0);
-   
- // oldManCaveMap->getSection(0,0)->addItemToTile(8,5,createSword());
 
  
     
