@@ -59,9 +59,13 @@ void GameState::draw() {
     this->currentMap->getPlayer()->drawHearts(hudHeight-10);
 
 // Draw Sword in HUD
-        if (this->currentMap->getPlayer()->getIsPickingUp()) {
+        if (this->currentMap->getPlayer()->canAttack==true) {
             handler->getImageManager()->SwordItem.draw(ofGetWidth() / 2 - (ofGetWidth() % 10), hudHeight - 90, 40, 40);
         }
+           if(this->currentMap->getPlayer()->canAttack==false){
+     oldManCaveMap->getSection(0,0)->addItemToTile(8,5,createSword());
+    }
+    
     
    
 
@@ -77,9 +81,10 @@ void GameState::reset() {
     oldManCaveMap = mapBuilder->createMap(handler->getImageManager()->oldMansCavePixelMap);
     //If there's more than one section in a map, besides overWorld, we must set which section we want to start at
     oldManCaveMap->setCurrentSection(0,0);
-    
-  oldManCaveMap->getSection(0,0)->addItemToTile(8,5,createSword());
-    
+   
+ // oldManCaveMap->getSection(0,0)->addItemToTile(8,5,createSword());
+
+ 
     
 
     overWorldMap->getSection(2, 0)->addEnemyToTile(8, 4, createTektike());

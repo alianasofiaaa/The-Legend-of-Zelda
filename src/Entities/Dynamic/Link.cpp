@@ -194,7 +194,7 @@ void Link::keyPressed(int key) {
 
         else if (key == 'd')
             this->movingDir[RIGHT] = true;
-else if(getIsPickingUp()){
+else if(canAttack == true){
          if (key == ' ' || key == 'b') {
             if (attacking || dead)
                 return;

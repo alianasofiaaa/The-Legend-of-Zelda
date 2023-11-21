@@ -20,6 +20,8 @@ void SwordItem::onCollision(shared_ptr<DynamicEntity> e) {
 
         // Pick up the item
         link->pickup();
+        // permits link to attack enemies
+        link->canAttack=true;
 
         // Play the sound effect
         handler->getSoundEffectManager()->playSoundEffect("item_get");

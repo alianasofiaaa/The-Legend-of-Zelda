@@ -26,6 +26,7 @@ public:
         this->MAX_HEALTH = 20;
         this->health = MAX_HEALTH;
     }
+        bool canAttack=false;
     void update();
     void drawHearts(int hudHeight);
     void draw();
@@ -41,6 +42,7 @@ public:
     void pickup(){isPickingUp = true; currentAnimation = getAnimations()->pickup;};
     void unPickup(){isPickingUp = false; currentAnimation = getAnimations()->movement.down;}
     bool getIsPickingUp(){return isPickingUp;};
+    bool getCanAttack(){return canAttack;}
 
     int getHealth(){return this->health;}
     ofRectangle getSwordHitbox() { return swordHitbox; }

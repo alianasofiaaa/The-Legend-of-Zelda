@@ -14,7 +14,7 @@ ImageManager::ImageManager() {
 
     overWorldPixelMap = ofImage("images/Maps/overWorldPixelMap.png");
     oldMansCavePixelMap = ofImage("images/Maps/oldMansCavePixelMap.png");
-    dungeonPixelMap = ofImage("images/Maps/dungeonPixelMap.png");
+   // dungeonPixelMap = ofImage("images/Maps/dungeonPixelMap.png");
     SwordItem=entitySprites[77];
     basicSword = entitySprites[74];
     fullHeart = entitySprites[126];
