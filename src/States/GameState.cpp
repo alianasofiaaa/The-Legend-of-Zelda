@@ -77,7 +77,9 @@ void GameState::reset() {
     oldManCaveMap = mapBuilder->createMap(handler->getImageManager()->oldMansCavePixelMap);
     //If there's more than one section in a map, besides overWorld, we must set which section we want to start at
     oldManCaveMap->setCurrentSection(0,0);
+    
   oldManCaveMap->getSection(0,0)->addItemToTile(8,5,createSword());
+    
     
 
     overWorldMap->getSection(2, 0)->addEnemyToTile(8, 4, createTektike());

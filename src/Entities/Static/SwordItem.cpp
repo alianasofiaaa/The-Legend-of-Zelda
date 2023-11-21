@@ -2,7 +2,7 @@
 
 
 void SwordItem::applyEffect(shared_ptr<Link> link){
- // link->getIsSwordCollected();// Set the sword as collected for the link
+
 }
 void SwordItem::onCollision(shared_ptr<DynamicEntity> e) {
     shared_ptr<Link> link = dynamic_pointer_cast<Link>(e);
@@ -14,7 +14,7 @@ void SwordItem::onCollision(shared_ptr<DynamicEntity> e) {
 
         // Apply the effect of the item
         applyEffect(link);
-                // link->getIsSwordCollected();// Set the sword as collected for the link
+               
 
         
 
