@@ -225,7 +225,7 @@ void Map::checkCollision(){
             shared_ptr<SwordItem> swordItem = dynamic_pointer_cast<SwordItem>(item);
             if (swordItem && swordItem->collidesWith(link)) {
                 swordItem->onCollision(link);
-                
+                getSection(0, 0)->removeItemFromTile(8, 5);    
             }
         }
     }

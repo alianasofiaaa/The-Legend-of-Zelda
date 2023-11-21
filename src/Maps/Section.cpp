@@ -73,3 +73,7 @@ void Section::respawnEnemies() {
         enemy->revive();
     }
 }
+
+void Section::removeItemFromTile(int x, int y) {
+    items[y][x] = nullptr; // Set the tile to null or some empty placeholder (nullptr for simplicity)
+}
