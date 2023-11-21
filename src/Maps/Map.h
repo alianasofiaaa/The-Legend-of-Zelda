@@ -7,6 +7,7 @@
 #include "Handler.h"
 #include "Link.h"
 #include "Section.h"
+#include "SwordItem.h"
 #include <memory>
 
 class Map{

@@ -31,9 +31,9 @@ public:
     int hudH;
     int hudHeight;
     int changeState;
-    int SwordImageX=400;
-    int SwordImageY=400;
-    bool swordhere=true;
+    int SwordImageX=8;
+    int SwordImageY=5;
+ 
    
     shared_ptr<Tektike> createTektike();
     shared_ptr<SwordItem> createSword();

@@ -58,12 +58,11 @@ void GameState::draw() {
     // Draw hearts on the HUD
     this->currentMap->getPlayer()->drawHearts(hudHeight-10);
 
-   // Draw Sword on the HUD
-  // if(){
-    handler->getImageManager()->SwordItem.draw(ofGetWidth()/2 - (ofGetWidth() % 10), hudHeight - 90, 40, 40);
+// Draw Sword in HUD
+        if (this->currentMap->getPlayer()->getIsPickingUp()) {
+            handler->getImageManager()->SwordItem.draw(ofGetWidth() / 2 - (ofGetWidth() % 10), hudHeight - 90, 40, 40);
+        }
     
-    
-  // }
    
 
     // MiniMap
