@@ -56,7 +56,7 @@ public:
     ofImage basicSword;
     ofImage overWorldPixelMap;
     ofImage oldMansCavePixelMap;
-    ofImage dungeonPixelMap;
+    ofImage NewdungeonPixelMap;
     ofImage heart;
     ofImage HUD;
     ofImage fullHeart;

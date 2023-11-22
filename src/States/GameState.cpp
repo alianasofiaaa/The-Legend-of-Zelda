@@ -24,6 +24,12 @@ void GameState::update()
             oldManCaveMap->setPlayer(currentMap->getPlayer());
             currentMap = oldManCaveMap;
         }
+            else if(currentMap->getWhereTo() == DUNGEON){
+            currentMap->getPlayer()->setX(NewDungeonMap->getCurrentSection()->doorXPos);
+            currentMap->getPlayer()->setY(NewDungeonMap->getCurrentSection()->doorYPos - Handler::TILE_HEIGHT);
+            NewDungeonMap->setPlayer(currentMap->getPlayer());
+            currentMap = NewDungeonMap;
+        }
     }
 
 }

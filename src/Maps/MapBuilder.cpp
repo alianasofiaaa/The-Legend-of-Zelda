@@ -265,6 +265,8 @@ shared_ptr<Section> MapBuilder::createSection(int startingPixelMapX, int startin
             else if (currentPixel == entityPixelColors.DUNGEON_ENTRANCE) {
                 column = 4;
                 row = 1;
+                isADoor=true;
+                whereTo=MapName::DUNGEON;
             }
             // Exit towards the OverWorld
             else if (currentPixel == entityPixelColors.OVERWORLD_ENTRANCE) {
