@@ -140,6 +140,18 @@ shared_ptr<Section> MapBuilder::createSection(int startingPixelMapX, int startin
                 row = 1;
                 collidable = false;
             }
+            // Walkable New Dungeon Floor
+              else if (currentPixel == tilePixelColors.WALKABLE_DUNGEON_FLOOR) {
+                column = 21;
+                row = 8;
+                collidable=false;
+            }
+               // Transition New Dungeon Floor
+              else if (currentPixel == tilePixelColors.DUNGEON_TRANSITION_FLOOR) {
+                column = 17;
+                row = 10;
+                collidable=false;
+            }
             // Upper Mountain Wall
             else if (currentPixel == tilePixelColors.UPPER_MOUNTAIN_WALL) {
                 column = 7;
@@ -246,6 +258,11 @@ shared_ptr<Section> MapBuilder::createSection(int startingPixelMapX, int startin
                 column = 10;
                 row = 3;
                 useEntitySheet = true; // this is here so that we get the old man image
+            }
+            // New Dungeon Wall
+             else if (currentPixel == tilePixelColors.DUNGEON_WALL) {
+                column = 28;
+                row = 10;
             }
             // Fire
             else if (currentPixel == entityPixelColors.FIRE) {

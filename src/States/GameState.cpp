@@ -85,10 +85,12 @@ void GameState::reset() {
     mapBuilder = make_unique<MapBuilder>(handler);
     overWorldMap = mapBuilder->createMap(handler->getImageManager()->overWorldPixelMap);
     oldManCaveMap = mapBuilder->createMap(handler->getImageManager()->oldMansCavePixelMap);
+    NewDungeonMap=mapBuilder->createMap(handler->getImageManager()->NewdungeonPixelMap);
     //If there's more than one section in a map, besides overWorld, we must set which section we want to start at
     oldManCaveMap->setCurrentSection(0,0);
+    NewDungeonMap->setCurrentSection(0,0);
    
- // oldManCaveMap->getSection(0,0)->addItemToTile(8,5,createSword());
+ 
 
  
     
