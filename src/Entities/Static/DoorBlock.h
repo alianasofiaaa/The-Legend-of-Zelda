@@ -6,7 +6,7 @@
 enum MapName {
     OVER_WORLD,
     OLD_MANS_CAVE,
-    DUNGEON
+    DUNGEON,
 };
 
 class DoorBlock : public StaticEntity {

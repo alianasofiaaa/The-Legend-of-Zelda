@@ -14,6 +14,7 @@ private:
     shared_ptr<Map> currentMap;
     shared_ptr<Map> overWorldMap;
     shared_ptr<Map> oldManCaveMap;
+    shared_ptr<Map> NewDungeonMap;
     shared_ptr<SwordItem> Sword;
     shared_ptr<Link> link;
     unique_ptr<MapBuilder> mapBuilder;

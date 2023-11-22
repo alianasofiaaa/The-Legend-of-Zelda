@@ -24,6 +24,12 @@ void GameState::update()
             oldManCaveMap->setPlayer(currentMap->getPlayer());
             currentMap = oldManCaveMap;
         }
+            else if(currentMap->getWhereTo() == DUNGEON){
+            currentMap->getPlayer()->setX(NewDungeonMap->getCurrentSection()->doorXPos);
+            currentMap->getPlayer()->setY(NewDungeonMap->getCurrentSection()->doorYPos - Handler::TILE_HEIGHT);
+            NewDungeonMap->setPlayer(currentMap->getPlayer());
+            currentMap = NewDungeonMap;
+        }
     }
 
 }
@@ -80,8 +86,12 @@ void GameState::reset() {
     mapBuilder = make_unique<MapBuilder>(handler);
     overWorldMap = mapBuilder->createMap(handler->getImageManager()->overWorldPixelMap);
     oldManCaveMap = mapBuilder->createMap(handler->getImageManager()->oldMansCavePixelMap);
+    NewDungeonMap=mapBuilder->createMap(handler->getImageManager()->NewdungeonPixelMap);
     //If there's more than one section in a map, besides overWorld, we must set which section we want to start at
     oldManCaveMap->setCurrentSection(0,0);
+    NewDungeonMap->setCurrentSection(0,0);
+   
+ 
 
  
     
