@@ -66,10 +66,12 @@ public:
     // TODO: Add your animation declarations here
     shared_ptr<LinkAnimations> linkAnimations;
     shared_ptr<DynamicEntityAnimations> tektikeAnimations;
+    shared_ptr<DynamicEntityAnimations> blueenemyAnimations;
     shared_ptr<Animation> titleScreenAnimation;
 
     ofImage getSpriteFromEntitySheetAt(int column, int row);
     ofImage getSpriteFromMapSheetAt(int column, int row);
     shared_ptr<DynamicEntityAnimations> getTektikeAnimations();
+    shared_ptr<DynamicEntityAnimations> getBlueEnemyAnimations();
     const int PIXELS_PER_TILE = 16;
 };

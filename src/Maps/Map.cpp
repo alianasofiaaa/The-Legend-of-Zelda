@@ -215,8 +215,14 @@ void Map::checkCollision(){
                     block->onCollision(enemy);
                 }
                 if(link->collidesWith(enemy)){
-                    link->damage(1);
-                    link->onCollision(enemy);
+                    shared_ptr<BlueEnemy> blueEnemy = dynamic_pointer_cast<BlueEnemy>(enemy);
+                    if (blueEnemy) {
+                        // BlueEnemy kills Link with one shot
+                        link->damage(20);
+                    } else {
+                        // Other enemies take 1 damage
+                        link->damage(1);
+                    }
                 }
             }
         }

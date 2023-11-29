@@ -6,6 +6,7 @@
 #include "Fire.h"
 #include "Handler.h"
 #include "Link.h"
+#include "BlueEnemy.h"
 #include "Section.h"
 #include <memory>
 

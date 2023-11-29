@@ -80,6 +80,7 @@ void GameState::reset() {
     overWorldMap->getSection(2, 0)->addEnemyToTile(8, 4, createTektike());
     overWorldMap->getSection(2, 0)->addEnemyToTile(4, 4, createTektike());
     overWorldMap->getSection(3, 1)->addEnemyToTile(6, 4, createTektike());
+    overWorldMap->getSection(1,1)->addEnemyToTile(6, 4, createBlueEnemy());
 
     currentMap = overWorldMap;
 
@@ -108,3 +109,11 @@ shared_ptr<Tektike> GameState::createTektike() {
     // each other
     return make_shared<Tektike>(0, 0, handler, handler->getImageManager()->getTektikeAnimations());
 }
+
+shared_ptr<BlueEnemy> GameState::createBlueEnemy() {
+    // Assuming 100 and 100 are initial x and y positions, adjust as needed
+    // handler->getBlueEnemyAnimations() should return a new shared_ptr
+    // containing animations for the BlueEnemy
+    return make_shared<BlueEnemy>(0, 0, handler, handler->getImageManager()->getBlueEnemyAnimations());
+}
+

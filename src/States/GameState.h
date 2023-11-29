@@ -3,6 +3,7 @@
 #include "Animation.h"
 #include "Link.h"
 #include "Tektike.h"
+#include "BlueEnemy.h"
 #include "MapBuilder.h"
 #include "State.h"
 #include <memory>
@@ -30,4 +31,5 @@ public:
     int changeState;
 
     shared_ptr<Tektike> createTektike();
+    shared_ptr<BlueEnemy> createBlueEnemy();
 };

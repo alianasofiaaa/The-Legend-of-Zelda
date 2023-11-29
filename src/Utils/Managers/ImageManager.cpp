@@ -100,6 +100,25 @@ shared_ptr<DynamicEntityAnimations> ImageManager::getTektikeAnimations(){
 
 }
 
+shared_ptr<DynamicEntityAnimations> ImageManager::getBlueEnemyAnimations(){
+    // Movement
+    DirectionalAnimations movement;
+    movement.down = getAnimationFromIndices(68, 69);
+    movement.right = getAnimationFromIndices(66, 67);
+    movement.left = getAnimationFromIndices(70, 71);
+    movement.up = getAnimationFromIndices(17, 35);
+
+    blueenemyAnimations = make_shared<DynamicEntityAnimations>();
+    blueenemyAnimations->movement = movement;
+
+    //No attacking animation for Blue Enemy
+    blueenemyAnimations->attacking = movement;
+
+    return blueenemyAnimations;
+
+
+}
+
 void ImageManager::createTitleScreenAnimation() {
     // Read from data/images/TitleScreenFrames
     vector<ofImage> frames;
