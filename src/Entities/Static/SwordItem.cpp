@@ -1,4 +1,9 @@
 #include "SwordItem.h"
+
+
+void SwordItem::applyEffect(shared_ptr<Link> link){
+
+}
 void SwordItem::onCollision(shared_ptr<DynamicEntity> e) {
     shared_ptr<Link> link = dynamic_pointer_cast<Link>(e);
     if (link){
@@ -9,9 +14,14 @@ void SwordItem::onCollision(shared_ptr<DynamicEntity> e) {
 
         // Apply the effect of the item
         applyEffect(link);
+               
+
+        
 
         // Pick up the item
         link->pickup();
+        // permits link to attack enemies
+        link->canAttack=true;
 
         // Play the sound effect
         handler->getSoundEffectManager()->playSoundEffect("item_get");

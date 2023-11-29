@@ -9,13 +9,15 @@ class SwordItem : public Item {
 
     public:
         SwordItem(int x, int y, shared_ptr<Handler> handler,ofImage sprite) : Item(x, y, handler,sprite) {
-            this->currentSprite = sprite;
+            this->handler->getImageManager()->SwordItem = sprite;
             isCollected = false;
+ 
             
         }
         ~SwordItem(){};
         void onCollision(shared_ptr<DynamicEntity> e);
-        void applyEffect(shared_ptr<Link> link) = 0;
+       void applyEffect(shared_ptr<Link> link);
         bool getIsCollected(){return isCollected;}
+        
 
 };

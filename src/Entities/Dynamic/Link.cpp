@@ -66,7 +66,7 @@ void Link::draw() {
         }
 
         // Get the sword image
-        ofImage sword = handler->getImageManager()->basicSword;
+        ofImage sword = handler->getImageManager()->SwordItem;
 
         // Rotate the sword if necessary.
         // By default, the sword is facing up
@@ -194,7 +194,7 @@ void Link::keyPressed(int key) {
 
         else if (key == 'd')
             this->movingDir[RIGHT] = true;
-else if(isPickingUp){
+else if(canAttack == true){
          if (key == ' ' || key == 'b') {
             if (attacking || dead)
                 return;

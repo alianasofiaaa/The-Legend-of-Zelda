@@ -8,6 +8,7 @@
 #include "Link.h"
 #include "BlueEnemy.h"
 #include "Section.h"
+#include "SwordItem.h"
 #include <memory>
 
 class Map{

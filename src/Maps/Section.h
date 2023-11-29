@@ -41,6 +41,8 @@ public:
     void update();
     void draw();
     void respawnEnemies();
+    // Function for remoming Sword
+    void removeItemFromTile(int x, int y);
 
     // To store the position of the door in said section, if it exists
     int doorXPos = 0;

@@ -24,6 +24,12 @@ void GameState::update()
             oldManCaveMap->setPlayer(currentMap->getPlayer());
             currentMap = oldManCaveMap;
         }
+            else if(currentMap->getWhereTo() == DUNGEON){
+            currentMap->getPlayer()->setX(NewDungeonMap->getCurrentSection()->doorXPos);
+            currentMap->getPlayer()->setY(NewDungeonMap->getCurrentSection()->doorYPos - Handler::TILE_HEIGHT);
+            NewDungeonMap->setPlayer(currentMap->getPlayer());
+            currentMap = NewDungeonMap;
+        }
     }
 
 }
@@ -58,12 +64,18 @@ void GameState::draw() {
     // Draw hearts on the HUD
     this->currentMap->getPlayer()->drawHearts(hudHeight-10);
 
-    // Draw Sword on the HUD
-    handler->getImageManager()->basicSword.draw(ofGetWidth()/2 - (ofGetWidth() % 10), hudHeight - 90, 40, 40);
-if(currentMap==oldManCaveMap){
-        handler->getImageManager()->SwordItem.draw(400, 400);
+// Draws Sword in HUD once Collided
+        if (this->currentMap->getPlayer()->canAttack==true) {
+            handler->getImageManager()->SwordItem.draw(ofGetWidth() / 2 - (ofGetWidth() % 10), hudHeight - 90, 40, 40);          
+        }
+        //Draws Sword on Cave until Collided
+           if(this->currentMap->getPlayer()->canAttack==false){
+     oldManCaveMap->getSection(0,0)->addItemToTile(8,5,createSword());
+    }
+    
+    
+   
 
-}
     // MiniMap
     ofDrawRectangle(this->currentMap->getPlayer()->getX()/20 + 40 * (currentMap->getCurrentSectionX()+1),  
                     hudHeight + (this->currentMap->getPlayer()->getY()/15  + 50 * (currentMap->getCurrentSectionY()+1)) - 175, 5, 5);
@@ -74,8 +86,15 @@ void GameState::reset() {
     mapBuilder = make_unique<MapBuilder>(handler);
     overWorldMap = mapBuilder->createMap(handler->getImageManager()->overWorldPixelMap);
     oldManCaveMap = mapBuilder->createMap(handler->getImageManager()->oldMansCavePixelMap);
+    NewDungeonMap=mapBuilder->createMap(handler->getImageManager()->NewdungeonPixelMap);
     //If there's more than one section in a map, besides overWorld, we must set which section we want to start at
     oldManCaveMap->setCurrentSection(0,0);
+    NewDungeonMap->setCurrentSection(0,0);
+   
+ 
+
+ 
+    
 
     overWorldMap->getSection(2, 0)->addEnemyToTile(8, 4, createTektike());
     overWorldMap->getSection(2, 0)->addEnemyToTile(4, 4, createTektike());
@@ -109,6 +128,7 @@ shared_ptr<Tektike> GameState::createTektike() {
     // each other
     return make_shared<Tektike>(0, 0, handler, handler->getImageManager()->getTektikeAnimations());
 }
+<<<<<<< HEAD
 
 shared_ptr<BlueEnemy> GameState::createBlueEnemy() {
     // Assuming 100 and 100 are initial x and y positions, adjust as needed
@@ -117,3 +137,8 @@ shared_ptr<BlueEnemy> GameState::createBlueEnemy() {
     return make_shared<BlueEnemy>(0, 0, handler, handler->getImageManager()->getBlueEnemyAnimations());
 }
 
+=======
+ shared_ptr<SwordItem> GameState::createSword(){
+    return make_shared<SwordItem>(400,400,handler,handler->getImageManager()->SwordItem);
+ }
+>>>>>>> 3091ac2473bded506069b0b4b26948367423c235

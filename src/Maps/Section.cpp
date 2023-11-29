@@ -73,3 +73,7 @@ void Section::respawnEnemies() {
         enemy->revive();
     }
 }
+// Method used to get rid of Sword once collided with Link
+void Section::removeItemFromTile(int x, int y) {
+    items[y][x] = nullptr;
+}

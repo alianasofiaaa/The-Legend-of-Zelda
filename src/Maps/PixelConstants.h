@@ -17,6 +17,7 @@ struct TilePixelColors{
     const ofColor UPPER_LEFT_BROWN_CORNER = ofColor(98, 71, 34);
     const ofColor CAVE_WALL = ofColor(75, 35, 0);
     const ofColor CAVE_UPPER_WALL = ofColor(98, 45, 1);
+    const ofColor DUNGEON_WALL= ofColor(0,140,150);
     
 
     // Decorations (also walls)
@@ -32,6 +33,8 @@ struct TilePixelColors{
     const ofColor WALKABLE_CAVE_FLOOR = ofColor(1, 0, 0);
     const ofColor WALKABLE_OVERWORLD_FLOOR = ofColor(255, 192, 122);
     const ofColor WATER_BRIDGE = ofColor(217, 78, 65);
+    const ofColor WALKABLE_DUNGEON_FLOOR= ofColor(0,128,136);
+     const ofColor DUNGEON_TRANSITION_FLOOR= ofColor(32,56,236);
 };
 
 struct EntityPixelColors{
