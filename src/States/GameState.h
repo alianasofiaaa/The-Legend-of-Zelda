@@ -38,9 +38,6 @@ public:
  
    
     shared_ptr<Tektike> createTektike();
-<<<<<<< HEAD
     shared_ptr<BlueEnemy> createBlueEnemy();
-=======
     shared_ptr<SwordItem> createSword();
->>>>>>> 3091ac2473bded506069b0b4b26948367423c235
 };

@@ -128,7 +128,6 @@ shared_ptr<Tektike> GameState::createTektike() {
     // each other
     return make_shared<Tektike>(0, 0, handler, handler->getImageManager()->getTektikeAnimations());
 }
-<<<<<<< HEAD
 
 shared_ptr<BlueEnemy> GameState::createBlueEnemy() {
     // Assuming 100 and 100 are initial x and y positions, adjust as needed
@@ -137,8 +136,7 @@ shared_ptr<BlueEnemy> GameState::createBlueEnemy() {
     return make_shared<BlueEnemy>(0, 0, handler, handler->getImageManager()->getBlueEnemyAnimations());
 }
 
-=======
- shared_ptr<SwordItem> GameState::createSword(){
+shared_ptr<SwordItem> GameState::createSword(){
     return make_shared<SwordItem>(400,400,handler,handler->getImageManager()->SwordItem);
- }
->>>>>>> 3091ac2473bded506069b0b4b26948367423c235
+}
+
