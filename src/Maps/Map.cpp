@@ -224,6 +224,9 @@ void Map::checkCollision(){
                         link->damage(1);
                     }
                 }
+                if(link->getSwordHitbox().intersects(enemy->getBounds())){
+                    enemy->damage(1);
+                }
             }     
     // Item Collision - Specifically for SwordItem and Link
     for (auto row : currentSection->getItems()) {
@@ -233,6 +236,7 @@ void Map::checkCollision(){
                 swordItem->onCollision(link);
                 getSection(0, 0)->removeItemFromTile(8, 5);    
             }
+
         }
     }
         }
