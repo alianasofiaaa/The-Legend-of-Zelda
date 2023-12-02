@@ -34,7 +34,11 @@ struct TilePixelColors{
     const ofColor WALKABLE_OVERWORLD_FLOOR = ofColor(255, 192, 122);
     const ofColor WATER_BRIDGE = ofColor(217, 78, 65);
     const ofColor WALKABLE_DUNGEON_FLOOR= ofColor(0,128,136);
-     const ofColor DUNGEON_TRANSITION_FLOOR= ofColor(32,56,236);
+    const ofColor DUNGEON_TRANSITION_FLOOR= ofColor(32,56,236);
+    const ofColor UP_RECURSIVE_TILE = ofColor(255,0,0);
+    const ofColor DOWN_RECURSIVE_TILE = ofColor(255,242,0);
+    const ofColor LEFT_RECURSIVE_TILE = ofColor(0,255,17);
+    const ofColor RIGHT_RECURSIVE_TILE = ofColor(255,0,222);
 };
 
 struct EntityPixelColors{

@@ -3,6 +3,10 @@
 #include "ofMain.h"
 #include "Map.h"
 #include "Fire.h"
+#include "UpRecursiveTile.h"
+#include "DownRecursiveTile.h"
+#include "LeftRecursiveTile.h"
+#include "RightRecursiveTile.h"
 #include "PixelConstants.h"
 #include <map>
 #include <memory>

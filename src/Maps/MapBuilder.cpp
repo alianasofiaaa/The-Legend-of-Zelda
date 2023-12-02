@@ -141,13 +141,37 @@ shared_ptr<Section> MapBuilder::createSection(int startingPixelMapX, int startin
                 collidable = false;
             }
             // Walkable New Dungeon Floor
-              else if (currentPixel == tilePixelColors.WALKABLE_DUNGEON_FLOOR) {
+            else if (currentPixel == tilePixelColors.WALKABLE_DUNGEON_FLOOR) {
                 column = 21;
                 row = 8;
                 collidable=false;
             }
-               // Transition New Dungeon Floor
-              else if (currentPixel == tilePixelColors.DUNGEON_TRANSITION_FLOOR) {
+            //Up recursion tile
+            else if (currentPixel == tilePixelColors.UP_RECURSIVE_TILE){
+                column = 19;
+                row = 0;
+                collidable=true;
+            }
+            //Down recursion tile
+            else if(currentPixel == tilePixelColors.DOWN_RECURSIVE_TILE){
+                column=20;
+                row=0;
+                collidable=true;
+            }
+            //Left recursion tile
+            else if(currentPixel == tilePixelColors.LEFT_RECURSIVE_TILE){
+                column=21;
+                row=0;
+                collidable=true;
+            }
+            //Right recursion tile
+            else if(currentPixel == tilePixelColors.RIGHT_RECURSIVE_TILE){
+                column=22;
+                row=0;
+                collidable=true;
+            }
+            // Transition New Dungeon Floor
+            else if (currentPixel == tilePixelColors.DUNGEON_TRANSITION_FLOOR) {
                 column = 17;
                 row = 10;
                 collidable=false;
@@ -329,6 +353,18 @@ shared_ptr<Section> MapBuilder::createSection(int startingPixelMapX, int startin
                 {
                     block = make_shared<Fire>(windowXPos, windowYPos, handler);
                 } 
+                else if(currentPixel == tilePixelColors.UP_RECURSIVE_TILE){ //Up recusion tile
+                    block = make_shared<UpRecursiveTile>(windowXPos, windowYPos, handler);
+                }
+                else if(currentPixel == tilePixelColors.DOWN_RECURSIVE_TILE){ //Down recursion tile
+                    block = make_shared<DownRecursiveTile>(windowXPos, windowYPos, handler);
+                }
+                else if(currentPixel == tilePixelColors.LEFT_RECURSIVE_TILE){ //Left recursion tile
+                    block = make_shared<LeftRecursiveTile>(windowXPos,windowYPos,handler);
+                }
+                else if(currentPixel == tilePixelColors.RIGHT_RECURSIVE_TILE){ //Right recursion tile
+                    block = make_shared<RightRecursiveTile>(windowXPos,windowYPos,handler);
+                }
                 else // nvm it's just a regular block
                 {
                     block = make_shared<BoundBlock>(windowXPos, windowYPos, handler);
