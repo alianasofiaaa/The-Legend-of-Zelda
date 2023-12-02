@@ -26,6 +26,7 @@ private:
     // Grid of Sections (NxM)
     shared_ptr<Link> link;
     vector<vector<shared_ptr<Section>>> sections;
+    shared_ptr<BlueEnemy> BlueEnem;
 
     // Visual Map Stuffy
     ofImage background;

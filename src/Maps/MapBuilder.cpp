@@ -353,6 +353,8 @@ shared_ptr<Section> MapBuilder::createSection(int startingPixelMapX, int startin
                 {
                     block = make_shared<Fire>(windowXPos, windowYPos, handler);
                 } 
+
+                //Recursion Tiles in right side of Dungeon
                 else if(currentPixel == tilePixelColors.UP_RECURSIVE_TILE){ //Up recusion tile
                     block = make_shared<UpRecursiveTile>(windowXPos, windowYPos, handler);
                 }

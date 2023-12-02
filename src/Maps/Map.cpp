@@ -4,6 +4,35 @@ using namespace std;
 
 void Map::update() {
     shared_ptr<Section> currentSection = this->getCurrentSection();
+    
+    //Blue Enemy tracks Link
+    for(auto enemy : currentSection->getEnemies()){
+        BlueEnem = dynamic_pointer_cast<BlueEnemy>(enemy);
+        if(BlueEnem){
+            if(BlueEnem->getBlueEnemyX()!=getPlayer()->getX() && BlueEnem->getBlueEnemyY()!=getPlayer()->getY() && BlueEnem->isDead() == false){
+                if(getPlayer()->getX()<BlueEnem->getBlueEnemyX()){
+                    BlueEnem->setX(BlueEnem->getX()-1);
+                }
+                if(getPlayer()->getX()>BlueEnem->getBlueEnemyX()){
+                    BlueEnem->setX(BlueEnem->getX()+1);
+                }
+                if(getPlayer()->getY()<BlueEnem->getBlueEnemyY()){
+                    BlueEnem->setY(BlueEnem->getY()-1);
+                }
+                if(getPlayer()->getY()>BlueEnem->getBlueEnemyY()){
+                    BlueEnem->setY(BlueEnem->getY()+1);
+                }
+            }
+
+        }
+
+        
+    }
+
+
+
+
+
 
     // If we are transitioning, nothing else should happen
     if (transitioning){
@@ -226,10 +255,10 @@ void Map::checkCollision(){
                 }
                 if(enemy->getBounds().intersects(link->getSwordHitbox())){
                     shared_ptr<BlueEnemy> blueEnemy = dynamic_pointer_cast<BlueEnemy>(enemy);
-                    if(blueEnemy){
+                    if(blueEnemy){ //sword kills Blue Enemy with one shot
                         blueEnemy->damage(10);
                         enemy->isDead();
-                    }else{
+                    }else{ //other enemies take less damage from sword
                         enemy->damage(1);
                         enemy->isDead();
                     }
