@@ -214,7 +214,7 @@ void Map::checkCollision(){
                 if (block->collidesWith(enemy)){
                     block->onCollision(enemy);
                 }
-                if(link->collidesWith(enemy)){
+                if(enemy->collidesWith(link) && enemy->isDead() == false){
                     shared_ptr<BlueEnemy> blueEnemy = dynamic_pointer_cast<BlueEnemy>(enemy);
                     if (blueEnemy) {
                         // BlueEnemy kills Link with one shot
@@ -224,8 +224,15 @@ void Map::checkCollision(){
                         link->damage(1);
                     }
                 }
-                if(link->getSwordHitbox().intersects(enemy->getBounds())){
-                    enemy->damage(1);
+                if(enemy->getBounds().intersects(link->getSwordHitbox())){
+                    shared_ptr<BlueEnemy> blueEnemy = dynamic_pointer_cast<BlueEnemy>(enemy);
+                    if(blueEnemy){
+                        blueEnemy->damage(10);
+                        enemy->isDead();
+                    }else{
+                        enemy->damage(1);
+                        enemy->isDead();
+                    }
                 }
             }     
     // Item Collision - Specifically for SwordItem and Link
