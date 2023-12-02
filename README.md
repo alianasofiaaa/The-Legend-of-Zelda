@@ -13,7 +13,7 @@ Don't forget that you must also fill out an evaluation form in Moodle to conside
 ## Grading
 
 (802-21-6180) (Jesus Y. Caban Feliciano) (jesus.caban1@upr.edu)
-(STUDENT NUMBER HERE) (STUDENT NAME HERE) (STUDENT EMAIL HERE)
+(802-21-4912) (Aliana S. Santiago Morales) (aliana.santiago1@upr.edu)
 
 Any project that doesn't compile will receive a 0.
 
@@ -23,4 +23,5 @@ If a partner has no commits in the repositories, they'll will receive a 0.
 If you have any bonus specs, bonus or any details the TA's should know, you should include it here:
 
 Recursion Spec:
-Our Tile Recursion Implementation is at: FILE_NAME in line 123 (just an example)
+Our Tile Recursion Implementation is at: MapBuilder.cpp lines 357-369, Files used:UpRecursiveTiles.h,DownRecursiveTiles.h, LeftRecursiveTiles.h, RightRecursiveTiles.h
+
